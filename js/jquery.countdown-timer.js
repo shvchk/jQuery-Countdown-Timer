@@ -1,8 +1,12 @@
 /*
  * Countdown Timer jQuery Plug-in
+ * ==============================
+ * Author: Duncan McMillan
+ * 
+ * Copyright (c) January 2011 Art & Soul
+ * http://www.artandsoul.co.uk
  *
- * Copyright (c) 2011 Art & Soul
- * Licensed under the MIT license.
+ * Released under the MIT license.
  * http://en.wikipedia.org/wiki/MIT_License
  */
 
@@ -49,7 +53,16 @@
 		
 		var update = function (seconds_remaining)
 		{
-			element.html(assemble_time_str(seconds_remaining));
+			var html;
+			var time_str = assemble_time_str(seconds_remaining);
+			
+			if (options.display_as_text){
+				html = time_str;
+			} else {
+				html = wrap_in_html(time_str);
+			}
+			
+			element.html(html);
 		}
 		
 		var assemble_time_str = function (seconds_remaining)
@@ -75,6 +88,29 @@
 			
 			return time_array.join(options.separator);
 		};
+		
+		var wrap_in_html = function (time_str)
+		{
+			var css_class;
+			var html = '<div class="bezel">';
+			
+			for (i = 0; i < time_str.length; i ++)
+			{
+				chr = time_str.substr(i, 1);
+				
+				if (chr == options.separator){
+					css_class = 'separator';
+				} else {
+					css_class = 'digit number-' + chr;
+				}
+				
+				html += '<div class="' + css_class + '">' + chr + '</div>';
+			}
+			
+			html += '</div>';
+			
+			return html;
+		}
 		
 		var str_pad = function (input, len, str)
 		{
