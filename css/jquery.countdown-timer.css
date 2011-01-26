@@ -12,11 +12,13 @@
 
 /* Layout ---------------------------------------------- */
 
-.clock-bezel .digit, .clock-bezel .separator { float:left; text-indent:-1000px; overflow:hidden; }
+.clock-bezel .digit, .clock-bezel .separator, .clock-bezel .unit { float:left; }
+.clock-bezel .digit, .clock-bezel .separator { text-indent:-1000px; overflow:hidden; }
 
-.clock-bezel { width:450px; height:60px; padding:5px;}
-.clock-bezel .digit { width:47px; height:60px;}
+.clock-bezel { width:450px; height:75px; padding:5px;}
+.clock-bezel .digit { width:47px; height:60px; }
 .clock-bezel .separator { width:9px; height:60px;}
+.clock-bezel .label { text-align:center; }
 
 /* Appearance ------------------------------------------ */
 
@@ -26,11 +28,11 @@
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-.clock-bezel .digit, .clock-bezel .separator { background-color:#000; }
+.clock-bezel .digit { }
 
 /* Sprite-driven Digits -------------------------------- */
 
-.digit { background-image:url(digit-sprite.png); }
+.digit { background-image:url(digit-sprite.png); background-repeat:no-repeat; }
 
 .digit.number-0 { background-position:   0px 0px; }
 .digit.number-1 { background-position: -50px 0px; }

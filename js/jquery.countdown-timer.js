@@ -36,7 +36,8 @@
 			var start_date = new Date();
 			
 			seconds_remaining = (end_date.getTime() - start_date.getTime()) * .001;
-						
+			
+			update(seconds_remaining);
 			tick_interval = setInterval(tick, 1000);
 		};
 	
@@ -92,10 +93,13 @@
 		var wrap_in_html = function (time_str)
 		{
 			var css_class;
-			var html = '<div class="clock-bezel">';
+			var html_prefix;
+			var html_suffix;
+			
+			var html_output = '<div class="clock-bezel">';
 			
 			for (i = 0; i < time_str.length; i ++)
-			{
+			{				
 				chr = time_str.substr(i, 1);
 				
 				if (chr == options.separator){
@@ -104,12 +108,60 @@
 					css_class = 'digit number-' + chr;
 				}
 				
-				html += '<div class="' + css_class + '">' + chr + '</div>';
+				var html = '<div class="' + css_class + '">' + chr + '</div>';
+				
+				switch (i)
+				{
+					case 0 :
+						// Most significant unit of Days
+						html_prefix = '<div class="unit">';
+						html_suffix = '<div class="label">Days</div></div>';
+						
+						html = html_prefix + html;
+						break;
+					
+					case time_str.length - 2 :
+						// Most significant unit of Seconds
+						html_prefix = '<div class="unit">';
+						html_suffix = '<div class="label">Seconds</div></div>';
+						
+						html = html_prefix + html;
+						break;
+						
+					case time_str.length - 5 :
+						// Most significant unit of Minutes
+						html_prefix = '<div class="unit">';
+						html_suffix = '<div class="label">Minutes</div></div>';
+
+						html = html_prefix + html;
+						break;
+						
+					case time_str.length - 8 :
+						// Most significant unit of Hours
+						html_prefix = '<div class="unit">';
+						html_suffix = '<div class="label">Hours</div></div>';
+
+						html = html_prefix + html;
+						break;
+
+					case options.significant_days - 1 :
+					case time_str.length - 1 :
+					case time_str.length - 4 :
+					case time_str.length - 7 :
+						// Least significant unit
+						html += html_suffix;
+						break;
+						
+					default :
+						// Nothing happens
+				}
+				
+				html_output += html;
 			}
 			
-			html += '</div>';
+			html_output += '</div>';
 			
-			return html;
+			return html_output;
 		}
 		
 		var str_pad = function (input, len, str)
