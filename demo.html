@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.counter.js"></script>
+<title>Counter</title>
+</head>
+<body>
+	<div id="clock">Counter goes here</div>
+	
+	<!-- jQuery to be executed on page load -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#clock').counter( { end : '2012:01:25:23:05' } );
+	});
+	</script>
+</body>
+</html>
