@@ -15,7 +15,7 @@
 .clock-bezel .digit, .clock-bezel .separator, .clock-bezel .unit { float:left; }
 .clock-bezel .digit, .clock-bezel .separator { text-indent:-1000px; overflow:hidden; }
 
-.clock-bezel { width:450px; height:75px; padding:5px;}
+.clock-bezel { width:450px; height:80px; padding:5px;}
 .clock-bezel .digit { width:47px; height:60px; }
 .clock-bezel .separator { width:9px; height:60px;}
 .clock-bezel .label { text-align:center; }
@@ -24,11 +24,21 @@
 
 .clock-bezel {
 	background-color:#333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#333));
+	background: -moz-linear-gradient(top, #555, #333);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#333');
 	color:#FFF;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-.clock-bezel .digit { }
+.clock-bezel .digit { background-color:#000; }
+
+/* Typography ------------------------------------------ */
+.clock-bezel .label {
+	font: 12px/2em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	font-weight:bold;
+	text-shadow: #000 2px 2px 1px;
+}
 
 /* Sprite-driven Digits -------------------------------- */
 
@@ -42,7 +52,7 @@
 .digit.number-5 { background-position:-250px 0px; }
 .digit.number-6 { background-position:-300px 0px; }
 .digit.number-7 { background-position:-350px 0px; }
-.digit.number-8 { background-position:-400px 0px }
+.digit.number-8 { background-position:-400px 0px; }
 .digit.number-9 { background-position:-450px 0px; }
 
 
