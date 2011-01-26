@@ -92,7 +92,7 @@
 		var wrap_in_html = function (time_str)
 		{
 			var css_class;
-			var html = '<div class="bezel">';
+			var html = '<div class="clock-bezel">';
 			
 			for (i = 0; i < time_str.length; i ++)
 			{

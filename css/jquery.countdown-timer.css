@@ -1,0 +1,46 @@
+/*
+ * CSS Style Sheet for jQuery Countdown Timer
+ * ==========================================
+ * Author: Duncan McMillan
+ * 
+ * Copyright (c) January 2011 Art & Soul
+ * http://www.artandsoul.co.uk
+ *
+ * Released under the MIT license.
+ * http://en.wikipedia.org/wiki/MIT_License
+ */
+
+/* Layout ---------------------------------------------- */
+
+.clock-bezel .digit, .clock-bezel .separator { float:left; text-indent:-1000px; overflow:hidden; }
+
+.clock-bezel { width:450px; height:60px; padding:5px;}
+.clock-bezel .digit { width:47px; height:60px;}
+.clock-bezel .separator { width:9px; height:60px;}
+
+/* Appearance ------------------------------------------ */
+
+.clock-bezel {
+	background-color:#333;
+	color:#FFF;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.clock-bezel .digit, .clock-bezel .separator { background-color:#000; }
+
+/* Sprite-driven Digits -------------------------------- */
+
+.digit { background-image:url(digit-sprite.png); }
+
+.digit.number-0 { background-position:   0px 0px; }
+.digit.number-1 { background-position: -50px 0px; }
+.digit.number-2 { background-position:-100px 0px; }
+.digit.number-3 { background-position:-150px 0px; }
+.digit.number-4 { background-position:-200px 0px; }
+.digit.number-5 { background-position:-250px 0px; }
+.digit.number-6 { background-position:-300px 0px; }
+.digit.number-7 { background-position:-350px 0px; }
+.digit.number-8 { background-position:-400px 0px }
+.digit.number-9 { background-position:-450px 0px; }
+
+
