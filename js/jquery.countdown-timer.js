@@ -93,8 +93,7 @@
 		var wrap_in_html = function (time_str)
 		{
 			var css_class;
-			var html_prefix;
-			var html_suffix;
+			var label;
 			
 			var html_output = '<div class="clock-bezel">';
 			
@@ -112,48 +111,34 @@
 				
 				switch (i)
 				{
+					// Deal with MOST significant digit of current unit
 					case 0 :
-						// Most significant unit of Days
-						html_prefix = '<div class="unit">';
-						html_suffix = '<div class="label">Days</div></div>';
-						
-						html = html_prefix + html;
+					case time_str.length - 2 :
+					case time_str.length - 5 :
+					case time_str.length - 8 :
+						html = '<div class="unit">' + html;
 						break;
 					
-					case time_str.length - 2 :
-						// Most significant unit of Seconds
-						html_prefix = '<div class="unit">';
-						html_suffix = '<div class="label">Seconds</div></div>';
-						
-						html = html_prefix + html;
-						break;
-						
-					case time_str.length - 5 :
-						// Most significant unit of Minutes
-						html_prefix = '<div class="unit">';
-						html_suffix = '<div class="label">Minutes</div></div>';
-
-						html = html_prefix + html;
-						break;
-						
-					case time_str.length - 8 :
-						// Most significant unit of Hours
-						html_prefix = '<div class="unit">';
-						html_suffix = '<div class="label">Hours</div></div>';
-
-						html = html_prefix + html;
-						break;
-
+					// Deal with LEAST significant digit of current unit
 					case options.significant_days - 1 :
-					case time_str.length - 1 :
-					case time_str.length - 4 :
-					case time_str.length - 7 :
-						// Least significant unit
-						html += html_suffix;
+						html += '<div class="label">Days</div></div>';
 						break;
 						
+					case time_str.length - 1 :
+						html += '<div class="label">Seconds</div></div>';
+						break;
+						
+					case time_str.length - 4 :
+						html += '<div class="label">Minutes</div></div>';
+						break;
+						
+					case time_str.length - 7 :
+						html += '<div class="label">Hours</div></div>';
+						break;
+						
+					
 					default :
-						// Nothing happens
+						// Do nowt
 				}
 				
 				html_output += html;
