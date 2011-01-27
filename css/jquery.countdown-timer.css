@@ -15,10 +15,12 @@
 .clock-bezel .digit, .clock-bezel .separator, .clock-bezel .unit { float:left; }
 .clock-bezel .digit, .clock-bezel .separator { text-indent:-1000px; overflow:hidden; }
 
+.clock-bezel .unit { margin:0 3px; }
+
 .clock-bezel { width:450px; height:80px; padding:5px;}
 .clock-bezel .digit { width:47px; height:60px; }
-.clock-bezel .separator { width:9px; height:60px;}
-.clock-bezel .label { text-align:center; }
+.clock-bezel .separator { width:9px; height:60px; display:none; }
+.clock-bezel .label { text-align:center; clear:both; }
 
 /* Appearance ------------------------------------------ */
 
@@ -26,7 +28,7 @@
 	background-color:#333;
 	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#333));
 	background: -moz-linear-gradient(top, #555, #333);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#333');
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#333333');
 	color:#FFF;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
