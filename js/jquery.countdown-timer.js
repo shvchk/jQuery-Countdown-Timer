@@ -9,7 +9,7 @@
  * Released under the MIT license.
  * http://en.wikipedia.org/wiki/MIT_License
  *
- * Version 1.0
+ * Version 1.0.1
  */
 
 (function($){
@@ -48,6 +48,11 @@
 			
 			// Calculate number of seconds remain until end date/time
 			seconds_remaining = (end_date.getTime() - start_date.getTime()) * .001;
+			
+			// If end point is already history there’s no point in continuing
+			if (seconds_remaining < 0) {
+				seconds_remaining = 0;
+			}
 			
 			// Update the display
 			update(seconds_remaining);
@@ -132,8 +137,28 @@
 			var sec = String(Math.floor(seconds_remaining % 60));
 			time_array.push(str_pad(sec, 2, "0"));
 			
+			// Sanitise value of options.separator
+			var safe_separator;
+			
+			switch (true)
+			{
+				case (options.separator == '') :
+				case (options.separator == null) :
+					// Empty value passed in by user so default to ':'
+					safe_separator = ':';
+					break;
+					
+				case (options.separator.length > 1) :
+					// Too many characters passed in so just use first one
+					safe_separator = options.separator.substr(0, 1);
+					break;
+					
+				default :
+					safe_separator = options.separator;
+			}
+			
 			// Collapse entire array into a string and return
-			return time_array.join(options.separator);
+			return time_array.join(safe_separator);
 		};
 		
 		/*
@@ -253,7 +278,7 @@
 		$.extend(options, config_options);
 		initialise(this);
 		
-		return ($this);
+		return (this);
 	};
 		
 })(jQuery);
