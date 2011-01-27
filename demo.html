@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-	body { background-color:#000; }
+	body { background-color:#000; color:#FFF; }
 </style>
 <link rel="stylesheet" type="text/css" href="css/jquery.countdown-timer.css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
@@ -16,7 +16,7 @@
 	<!-- jQuery to be executed on page load -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#clock').countdown();
+		$('#clock').countdown( { to : '2011:12:25:00:00' } );
 	});
 	</script>
 </body>
