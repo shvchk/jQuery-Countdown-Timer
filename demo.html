@@ -1,23 +1,60 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-	body { background-color:#000; color:#FFF; }
-</style>
-<link rel="stylesheet" type="text/css" href="css/jquery.countdown-timer.css" />
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.countdown-timer.js"></script>
-<title>Countdown Timer jQuery Plug-in</title>
-</head>
-<body>
-	<div id="clock">Counter goes here</div>
+	<meta charset='utf-8'>
+	<title>Countdown</title>
+
+	<!-- Link jQuery and the plugin -->
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+	<script src='https://raw.github.com/shvchk/jQuery-Countdown-Timer/master/jquery.countdown-timer.min.js'></script>
 	
-	<!-- jQuery to be executed on page load -->
-	<script type="text/javascript">
+	<!-- Initialize the plugin -->
+	<script>
 	$(document).ready(function() {
-		$('#clock').countdown( { to : '2011:12:25:00:00' } );
+		$('body').countdown({
+			to: '2011:11:11:00:00',
+			separator: ' ',
+			significant_days: 1,
+			UTC: true
+		});
 	});
 	</script>
-</body>
+	
+	
+	<!-- That's all! Let's just style it a bit =] -->
+	<style>
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Lato:100&text=0123456789ДниЧасыМинутыСекунды);
+
+	body {
+		margin: 0;
+		padding: 1em 0 0;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAA+UlEQVRYhc3XOQ6EMBBE0c+kvv9NIWYCJIRYjLGrlz7A11NlPc3zjOhKKarUTxUSmpZl0bC0JiRryU2MsyxMDLKMTIyw7Ex0s0xN9LGsTXSwHEx8ZfmY+MRyM9HO8jTRyHI20cLyN/HKCjFRZ0WZqLACTTyxYk3cssJNXFkZTJxYSUwcWXlM7KxUJjZWNhMwresqCaEzIXxfhaZSioalNSFZS25inGVhYpBlZGKEZWeim2Vqoo9lbaKD5WDiK8vHxCeWm4l2lqeJRpaziRaWv4lXVoiJOivKRIUVaOKJFWvilhVu4srKYOLESmLiyMpjYmelMrGxspmAPwu/mTzgUZhGAAAAAElFTkSuQmCC);
+		font: 1.8em 'Lato', 'Open Sans Condensed', sans-serif;
+		text-align: center;
+	}
+
+	.unit, .digits, .digit, .separator {
+		display: inline-block;
+	}
+
+	.digits {
+		color: #fff;
+		background: #111;
+		width: 1.5em;
+		margin: .05em;
+		font-size: 6em;
+		border-radius: .1em;
+	}
+
+	.digit {
+		position: relative;
+		top: -.05em;
+	}
+
+	.label {
+		color: #aaa;
+	}
+	</style>
+</head>
+<body></body>
 </html>
