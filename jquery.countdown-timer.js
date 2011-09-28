@@ -55,7 +55,7 @@
 			// Calculate number of seconds remain until end date/time
 			seconds_remaining = (end_date.getTime() - start_date.getTime()) * .001;
 			
-			// If end point is already history there’s no point in continuing
+			// If end point is already history thereâ€™s no point in continuing
 			if (seconds_remaining < 0) {
 				seconds_remaining = 0;
 			}
@@ -215,22 +215,22 @@
 						
 					case time_str.length - 1 :
 						// Append Seconds label and close unit group
-						html += '</div><div class="label">Ñåêóíäû</div></div>';
+						html += '</div><div class="label">Ğ¡ĞµĞºÑƒĞ½Ğ´Ñ‹</div></div>';
 						break;
 						
 					case time_str.length - 4 :
 						// Append Minutes label and close unit group
-						html += '</div><div class="label">Ìèíóòû</div></div>';
+						html += '</div><div class="label">ĞœĞ¸Ğ½ÑƒÑ‚Ñ‹</div></div>';
 						break;
 						
 					case time_str.length - 7 :
 						// Append Hours label and close unit group
-						html += '</div><div class="label">×àñû</div></div>';
+						html += '</div><div class="label">Ğ§Ğ°ÑÑ‹</div></div>';
 						break;
 						
 					case time_str.length - 9 :
 						// Append Days label and close unit group
-						html += '</div><div class="label">Äíè</div></div>';
+						html += '</div><div class="label">Ğ”Ğ½Ğ¸</div></div>';
 						break;
 						
 					default :
