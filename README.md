@@ -1,6 +1,6 @@
 jQuery Countdown Timer
 ======================
-A lightweight jQuery plug-in to display a digital clock which counts down to a specified time and date.
+A lightweight (924B minified and gzipped) jQuery plug-in to display a digital clock which counts down to a specified time and date.
 
 Display output can be rendered as simple text or wrapped in HTML to facilitate CSS styling. A sample CSS file is included along with accompanying sprite image.
 
@@ -11,15 +11,15 @@ Configuration Options
 ---------------------
 Countdown Timer supports the following user definable options.
 
-display_as_text : Boolean value. When set as "true" the remaining time is displayed in simple text. When set as the default "false" the remaining time is wrapped in HTML to facilitate CSS styling.
+-   **display_as_text:** Boolean value. When set as "true" the remaining time is displayed in simple text. When set as the default "false" the remaining time is wrapped in HTML to facilitate CSS styling.
 
-to : Date time string to count down to. String must be formatted as yyyy:mm:dd:mm:ss. Default value is "2111:11:11:11:11".
+-   **to:** Date time string to count down to. String must be formatted as yyyy:mm:dd:mm:ss. Default value is "2111:11:11:11:11".
 
-separator : If the display_as_text value is set to true, then this value will be used to separate the digits in the countdown display. If an empty or null value is passed the default colon (:) is used. If a string containing multiple characters is passed then only the first character will be used.
+-   **separator:** If the display_as_text value is set to true, then this value will be used to separate the digits in the countdown display. If an empty or null value is passed the default colon (:) is used. If a string containing multiple characters is passed then only the first character will be used.
 
-significant_days : If the number of days requires fewer digits than set here, then the vaule is left padded with zeros. Default number of day digits is 2.
+-   **significant_days:** If the number of days requires fewer digits than set here, then the vaule is left padded with zeros. Default number of day digits is 2.
 
-UTC : Boolean value. When set as "true" the time to count down to is considered to be universal (UTC). When set as the default "false" the time to count down to is considered to be local.
+-   **UTC:** Boolean value. When set as "true" the time to count down to is considered to be universal (UTC). When set as the default "false" the time to count down to is considered to be local.
 
 
 Implementation
